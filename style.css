@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+*::selection {
+  background-color: #d90833;
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  background-color: white;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  height: 100px;
+}
+
+#Header {
+  box-shadow: 0px 0px 10px rgba(13, 27, 97, 0.5);
+}
+
+.logo {
+  width: 100px;
+  margin-left: 5rem;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0e1b60;
+  text-decoration: none;
+}
+
+.item {
+  margin: 0 15px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #0e1b60;
+}
+
+.item:hover {
+  color: #d90833;
+  border-bottom: 2px solid #0e1b60;
+}
+
+#menu {
+  display: none;
+}
+
+.menu-icono {
+  width: 25px;
+}
+
+label {
+  cursor: pointer;
+  display: none;
+}
+
+#boton {
+  color: white;
+}
+
+.btn #boton {
+  padding: 10px 24px;
+  border-radius: 30px;
+  background-color: #0d1b61;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn #boton:hover {
+  background-color: #d90833;
+  color: white;
+}
+/* responsive header */
+
+@media (max-width: 991px) {
+  .menu {
+    padding: 30px;
+    margin: 0;
+  }
+
+  label {
+    display: initial;
+  }
+
+  .menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    display: none;
+  }
+
+  .item {
+    margin: 0 0 20px 0;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100px;
+  }
+
+  /* (~) este simbolo se coloca con Alt+126 */
+  #menu:checked ~ .menu {
+    display: initial;
+  }
+
+  .item:checked ~ .item {
+    display: none;
+  }
+}
+
+/* secciones con el personaje */
+
+.container {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  align-items: center;
+  padding: 7rem 10rem 0 10rem;
+}
+
+.titulo {
+  color: #0e1b60;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem 0 2rem;
+  margin: 0;
+  font-family: "Bitter", serif;
+  font-size: 5rem;
+}
+.nombre {
+  font-size: 8rem;
+  font-family: "Bitter", serif;
+  color: #d90833;
+}
+.nombre::selection {
+  background-color: #0e1b60;
+  color: #d90833;
+}
+.parrafo-1 {
+  font-family: "Bitter", serif;
+  font-size: 1rem;
+  float: left;
+  color: #0e1b60;
+  position: relative;
+}
+
+.parrafo-1 span {
+  position: absolute;
+  right: 0;
+  width: 0;
+  background: white;
+  border-left: 5px solid #d90833;
+
+  animation: maquina 8s infinite alternate steps(70);
+}
+
+@keyframes maquina {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
+
+.personaje-cabeza {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.personaje {
+  width: 30rem;
+  margin-left: -55px;
+  margin-top: 20px;
+}
+
+.page-header__scroll {
+  position: absolute;
+  margin-top: 60px;
+  left: 450px;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  color: #0e1b60;
+  font-family: Arial, Helvetica, sans-serif;
+
+  animation: scroll 5s ease infinite alternate;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(20px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.linea {
+  border-left: 1.5px solid #d90833;
+  height: 22rem;
+  position: relative;
+  left: 21.45rem;
+}
+
+#work {
+  background-color: #d90833;
+  height: 850px;
+}
+
+.work-titulo {
+  font-size: 7rem;
+  color: white;
+  padding-left: 5rem;
+  padding-top: 2rem;
+}
+
+#contact {
+  display: flex;
+  justify-content: end;
+  background-color: #0e1b60;
+  height: 850px;
+}
+
+.contact-titulo {
+  color: white;
+  font-size: 7rem;
+  padding-right: 5rem;
+  padding-top: 2rem;
+}
+
+.pie {
+  background-color: #d90833;
+  color: white;
+  font-size: 1rem;
+  height: 1.2rem;
+  text-align: center;
+}
